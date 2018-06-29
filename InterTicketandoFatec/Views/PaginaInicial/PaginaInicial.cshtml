@@ -1,0 +1,113 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.AtividadeView>
+
+@{
+    ViewBag.Title = "Paginainicial";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+
+}
+<br />
+
+<!-- <Slide> -->
+<div class="row">
+    <div class="col-lg-12">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="~/Images/6Kr5i031 (1)-min.png" alt="Palestra 1" style="height: 600px; width: 1800px;">
+                    <div class="carousel-caption">
+                        <a href="/Usuario/UsuarioCreate" class="btn btn-success  btn-lg">CADASTRE -SE AQUI !</a>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img class="d-block w-100" src="~/Images/2-min.jpg" alt="Palestra 2" style="height: 600px; width: 1800px;">
+                    <div class="carousel-caption">
+                        <a href="#listaeventos" class="btn btn-success  btn-lg"> EVENTOS DISPONIVEIS AQUI !</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </Slide> -->
+
+<br />
+
+<!-- <Tabela> -->
+<div class="container">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+                <!-- <Dados - Evento> -->
+                <th align="center"> <b> Nome </b> </th>
+                <th align="center"> <b> Preço(R$) </b> </th>
+                <!-- </Dados - Evento> -->
+
+                <!-- <Dados - Tipo> -->
+                <th align="center"> <b> Tipo </b> </th>
+                <!-- </Dados - Tipo> -->
+
+                <!-- <Dados - Conferente> -->
+                <th align="center"> <b> Conferente </b> </th> <!-- <Lembrete: nome do conferente> -->
+                <th align="center"> <b> Assunto </b> </th>
+                <th align="center"> <b> Conteudo </b> </th>
+                <!-- </Dados - Conferente> -->
+
+                <!-- <Dados - Atividade> -->
+                <th align="center"> <b> Descrição </b> </th>
+                <th align="center"> <b> Data </b> </th>
+                <th align="center"> <b> Inicio </b> </th>
+                <th align="center"> <b> Terminio </b> </th>
+                <th align="center"> <b> Carga Horaria </b> </th>
+                <!-- </Dados - Atividade> -->
+
+                <th colspan="2"></th> <!-- <Propósto: preencher o cabeçalho das duas colunas adicionais criadas pelos botões, Alterar e Apagar, presentes da tabela> -->
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var atividade in Model)
+        {
+            <tr>
+                <!-- <Campo - Evento> -->
+                <td> @atividade.Nome_Evento </td>
+
+                <td> @atividade.Valor </td>
+                <!-- </Campo - Evento> -->
+
+                <!-- <Campo - Tipo> -->
+                <td> @atividade.TipoEvento </td>
+                <!-- </Campo - Tipo> -->
+
+                <!-- <Campo - Conferente> -->
+                <td> @atividade.NomeConferente </td>
+
+                <td> @atividade.Assunto </td>
+
+                <td> @atividade.Conteudo </td>
+                <!-- </Campo - Conferente> -->
+
+                <!-- <Campo - Atividade> -->
+                <td> @atividade.Descricao </td>
+
+                <td> @atividade.Data </td>
+
+                <td> @atividade.HoraInicio </td>
+
+                <td> @atividade.HoraFinal </td>
+
+                <td> @atividade.CargaHoraria </td>
+                <!-- </Campo - Atividade> -->
+
+                <td> <a class="btn btn-primary" href="/PaginaInicial/InscreverEvento/@atividade.EventoId"> Inscrever-se </a> </td>
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+</div>
+<!-- </Tabela> -->

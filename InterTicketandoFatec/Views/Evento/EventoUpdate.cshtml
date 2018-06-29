@@ -1,0 +1,58 @@
+﻿@model InterTicketandoFatec.Models.Evento
+
+@{
+    ViewBag.Title = "EventoUpdate";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Formulário> -->
+    <form action="/Evento/Create" method="post">
+
+        <!-- <Titulo> -->
+        <font color="blue">
+            <h3 align="center"> Evento </h3>
+        </font>
+        <!-- </Titulo> -->
+
+        <input type="hidden" name="ID" value="@Model.ID" /> <!-- <Campo escondido do ID> -->
+
+        <!-- <Campo - Nome> -->
+        <div class="form-group">
+            <label> Nome </label>
+            <input class="form-control" type="text" name="Nome" value="@Model.NomeEvento" />
+        </div>
+        <!-- </Campo - Nome> -->
+
+        <br />
+
+        <!-- <Campo - Valor> -->
+        <div class="form-group">
+            <label> Preço </label>
+            <input type="text" name="Valor" class="form-control" value="@Model.Valor" />
+        </div>
+        <!-- </Campo - Valor> -->
+
+        <br />
+
+        <!-- <Botões> -->
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark-green" type="submit"> Salvar </button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-mdb-color" type="reset"> Limpar </button>
+            </div>
+
+            <div class="row col">
+                <a class="btn btn-elegant" href="/Atividade/AtividadeIndex"> Voltar </a>
+            </div>
+        </div>
+        <!-- </Botões> -->
+    </form>
+    <!-- </Formulário> -->
+</div>

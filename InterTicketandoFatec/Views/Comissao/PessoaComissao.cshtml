@@ -1,0 +1,47 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.PessoaComissaoView>
+
+@{
+    ViewBag.Title = "PessoaComissao";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="conteiner">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Tabela> -->
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+
+                <th align="center"> <b> Nome </b> </th>
+                <th align="center"> <b> Nome Evento </b> </th>
+                <th align="center"> <b> Login </b> </th>
+                <th align="center"> <b> Descrição </b> </th>
+                <th align="center"> <b> Perfil </b> </th>
+                
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var comissao in Model)
+        {
+            <tr>
+                <td> @comissao.NomeParticipanteComissao </td>
+
+                <td> @comissao.NomeEvento </td>
+
+                <td> @comissao.Login </td>
+
+                <td> @comissao.Descricao </td>
+
+                <td> @comissao.Perfil </td>
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+    <!-- </Tabela> -->
+</div>

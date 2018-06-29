@@ -1,0 +1,79 @@
+﻿@model InterTicketandoFatec.Models.Comissao
+
+@{
+    ViewBag.Title = "ComissaoUpdate";
+    Layout = "~/Views/Layout/_LayoutOrganizacao.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Formulário> -->
+    <form action="/Comissao/ComissaoUpdate" method="post">
+
+        <!-- <Campo - Login> -->
+        <div class="form-group">
+            <label> Login </label>
+            <input type="text" name="Login" class="form-control" value="@Model.Login" />
+        </div>
+        <!-- </Campo - Login> -->
+
+        <br />
+
+        <!-- <Campo - Descrição> -->
+        <div class="form-group">
+            <label> Descrição </label>
+            <textarea class="form-control" rows="5" name="Descricao" value="@Model.Descricao"></textarea>
+        </div>
+        <!-- </Campo - Descrição> -->
+
+        <br />
+
+        <!-- <Campo - Senha> -->
+        <div class="form-group">
+            <label> Senha </label>
+            <input type="password" class="form-group" name="Senha" value="@Model.Senha" />
+        </div>
+        <!-- </Campo - Senha> -->
+
+        <br />
+
+        <!-- <Campo - Perfil> -->
+        <div class="form-group">
+            <select name="Perfil" class="form-control" value="@Model.Perfil">
+                <option value="administrador"> Administrador </option>
+                <option value="usuario"> Usuario </option>
+            </select>
+        </div>
+        <!-- </Campo- Perfil> -->
+
+        <!-- <Campo - Evento> -->
+        <select name="Evento_id" class="form-control">
+            @foreach (var evento in ViewBag.Eventos)
+            {
+                <option value="@evento.ID" @(evento.ID == Model.ID ? "selected" : "")> @evento.NomeEvento </option>
+            }
+        </select>
+        <!-- </Campo - Evento> -->
+
+        <br />
+
+        <!-- <Botões> -->
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark-green" type="submit"> Salvar </button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-mdb-color" type="reset"> Limpar </button>
+            </div>
+
+            <div class="row col">
+                <a class="btn btn-elegant" href="/Comissao/ComissaoIndex"> Voltar </a>
+            </div>
+        </div>
+        <!-- </Botões> -->
+    </form>
+    <!-- </Formulário> -->
+</div>

@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "UsuarioCreate";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Formulário> -->
+    <form action="/Usuario/UsuarioCreate" method="post">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" name="Nome" class="form-control" autofocus />
+        </div>
+
+       
+
+        <!-- <Campo - RG> -->
+        <div class="form-group">
+            <label> RG </label>
+            <input type="text" name="RG" class="form-control" />
+        </div>
+        <!-- </Campo - RG> -->
+
+        <br />
+
+        <!-- <Campo - RA> -->
+        <div class="form-group">
+            <label> RA </label>
+            <input type="text" name="RA" class="form-control" />
+        </div>
+        <!-- </Campo - RA> -->
+
+        <br />
+
+        <!-- <Campo - Curso> -->
+        <div class="form-group">
+            <label> Curso </label>
+            <input type="text" class="form-control" name="Curso" />
+        </div>
+        <!-- </Campo - Curso> -->
+
+        <br />
+
+        <!-- <Campo - Email> -->
+        <div class="form-group">
+            <label> E-mail </label>
+            <input type="email" name="Email" class="form-control" />
+        </div>
+        <!-- </Campo- Email> -->
+
+        <br />
+
+        <!-- <Campo - Login> -->
+        <div class="form-group">
+            <label> Login </label>
+            <input type="text" name="Login" class="form-control" />
+        </div>
+        <!-- </Campo - Login> -->
+
+        <br />
+
+        <!-- <Campo - Senha> -->
+        <div class="form-group">
+            <label> Senha </label>
+            <input type="password" name="Senha" class="form-control" />
+        </div>
+        <!-- </Campo - Senha> -->
+
+        <br />
+
+        <!-- <Botões> -->
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark-green" type="submit"> Salvar </button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-mdb-color" type="reset"> Limpar </button>
+            </div>
+
+            <div class="row col">
+                <a class="btn btn-elegant" href="/PaginaInicial/PaginaInicial"> Voltar </a>
+            </div>
+        </div>
+        <!-- </Botões> -->
+    </form>
+    <!-- </Formulário> -->
+</div>

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "UsuarioLogin";
+    Layout = "~/Views/Layout/_LayoutLogin.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+    <!-- <Formulário> -->
+    <form action="/Usuario/UsuarioLogin" method="post">
+
+        <!-- <Campo - Login> -->
+        <div class="form-group">
+            <label> Login </label>
+            <input type="text" name="Login" class="form-control" />
+        </div>
+        <!-- </Campo - Login> -->
+
+        <br />
+
+        <!-- <Campo - Senha> -->
+        <div class="form-group">
+            <label> Senha </label>
+            <input type="password" name="Senha" class="form-control" />
+        </div>
+        <!-- </Campo - Senha> -->
+
+        <br />
+
+        <button class="btn btn-primary" type="submit"> Login </button>
+    </form>
+    <!-- </Formulário> -->
+</div>

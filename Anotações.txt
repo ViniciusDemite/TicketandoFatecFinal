@@ -1,0 +1,53 @@
+
+ALTERAÇÕES NO BANCO DE DADOS
+
+Tabelas
+
+atividades: variável <data> teve seu tipo alterado para <varchar(20)>.
+
+Procedure
+
+atividadeAdd & atividadeAlt: as variáveis <data>, <horaInicio> e <horaFinal> foram corrigidas para bater com a tabela <atividades>. 
+A correções foram as seguintes, respectivamente: <varchar(20)>, <varchar(5)> e <varchar(5)>.
+
+====================================================================================================================
+
+ANOTAÇÕES DO VISUAL STUDIO
+
+Model
+
+evento & atividadeview: a propriedade <valor> foi alterada para o tipo <decimal>, pois em uma das compilções parecia haver um erro quando essa variável
+está declarada como <float> no programa. Isso foi encontrado ao tentar executar o <AtividadeIndex> não quando estava sendo criado um teste de evento, pois não
+tentei colocar um valor para os testes que tentei.
+
+DAL
+
+eventodal: suas conversões e referencias a propriedade <valor> foram alteradas de <float> para <decimal> como está definido desde a ultima alteração. Além disso
+a procedure <eventoAdd> foi alterada para seu simples <insert> dentro do método <EventoCreate>, pois quando foi alterado para esse modo foi possivel fazer
+o cadastro. Como a alteraçao foi um sucesso decidi alterar o <eventoAlt> para sua forma de <update> básica.
+
+Controller
+
+View
+
+====================================================================================================================
+
+Perguntas
+
+mesmo cadastrando tudo separado, evento, conferente e atividade, quando o <select> da <join> <v_nEvento> for chamado irá mostrar os novos cadastros?
+
+a tabela <status> terá valores pré-definidos para depois na hora do cadastro somente escolher entre elas ou será feito todo o CRUD?
+
+será possivel ver uma tabela que mostre somente os conferentes de todos os eventos, assim como uma tabela com todos os eventos separados, somente com nome
+e valor, ou só sera feita a consulta desses por meio da tabela que junta evento, tipo, conferente e atividades?
+
+é melhor criar uma view para o select de usuario e conferente de acordo com a view no banco ou não é necessário já que ambos herdam de pessoa?
+
+====================================================================================================================
+
+PARA IMPLEMENTAR
+
+quando o <layout> de login estiver pronto criar <view - login>
+
+dentro da <AtividadeIndex> deve ser feito uma logica para somente mostrar os botões depois da tabela, os botões da tabela e o <colspan> quando um usuario da
+comissao estiver logado. A mesma restrição deve ser feita para todos <adicionar>, <alterar> e <update>.

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.ComissaoResponsavelView>
+
+@{
+    ViewBag.Title = "ComissaoResponsavel";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="conteiner">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Tabela> -->
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+                <!-- <Comissao> -->
+                <th align="center"> <b> Login </b> </th>
+                <th align="center"> <b> Descrição Comissão </b> </th>
+                <!-- </Comissao> -->
+
+                <!-- <AtividadeView> -->
+                <th align="center"> <b> Nome Evento </b> </th>
+                <th align="center"> <b> Valor </b> </th>
+                <th align="center"> <b> Tipo </b> </th>
+                <th align="center"> <b> Conferente </b> </th>
+                <th align="center"> <b> Assunto </b> </th>
+                <th align="center"> <b> Conteudo </b> </th>
+                <th align="center"> <b> Descrição  </b> </th>
+                <th align="center"> <b> Data </b> </th>
+                <th align="center"> <b> Inicio </b> </th>
+                <th align="center"> <b> Termino </b> </th>
+                <th align="center"> <b> Carga Horaria </b> </th>
+                <!-- </AtividadeView> -->
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var comissao in Model)
+        {
+            <tr>
+                <td> @comissao.Login </td>
+
+                <td> @comissao.DescricaoComissao </td>
+
+                <td> @comissao.Nome_Evento </td>
+
+                <td> @comissao.Valor </td>
+
+                <td> @comissao.TipoEvento </td>
+
+                <td> @comissao.NomeConferente </td>
+
+                <td> @comissao.Assunto </td>
+
+                <td> @comissao.Conteudo </td>
+
+                <td> @comissao.Descricao </td>
+
+                <td> @comissao.Data </td>
+
+                <td> @comissao.HoraInicio </td>
+
+                <td> @comissao.HoraFinal </td>
+
+                <td> @comissao.CargaHoraria </td>
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+    <!-- </Tabela> -->
+</div>

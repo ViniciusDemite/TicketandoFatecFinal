@@ -1,0 +1,72 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.ChamadaView>
+
+@{
+    ViewBag.Title = "Evento_UsuarioIndex";
+    Layout = "~/Views/Layout/_LayoutOrganizacao.cshtml";
+}
+
+<div class="container">
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Tabela> -->
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+                <!-- <Dados - Usuario> -->
+                <th align="center"> <b> Login </b> </th>
+                <th align="center"> <b> E-mail </b> </th>
+                <th align="center"> <b> RG </b> </th>
+                <th align="center"> <b> RA </b> </th>
+                <th align="center"> <b> Curso </b> </th>
+                <!-- </Dados - Usuario> -->
+
+                <!-- <Dados - Atividade> -->
+                <th align="center"> <b> Nome </b> </th>
+                <th align="center"> <b> Preço(R$) </b> </th>
+                <th align="center"> <b> Tipo </b> </th>
+                <th align="center"> <b> Conferente </b> </th>
+                <th align="center"> <b> Assunto </b> </th>
+                <th align="center"> <b> Conteudo </b> </th>
+                <th align="center"> <b> Descrição </b> </th>
+                <th align="center"> <b> Data </b> </th>
+                <th align="center"> <b> Inicio </b> </th>
+                <th align="center"> <b> Terminio </b> </th>
+                <th align="center"> <b> Carga Horaria </b> </th>
+                <!-- </Dados - Atividade> -->
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var ue in Model)
+        {
+            <tr>
+                <!-- <Campo - Usuario> -->
+                <td> @ue.Login </td>
+                <td> @ue.Email </td>
+                <td> @ue.RG </td>
+                <td> @ue.RA </td>
+                <td> @ue.Curso </td>
+                <!-- </Campo - Usuario> -->
+
+                <!-- <Campo - Atidade> -->
+                <td> @ue.Nome_Evento</td>
+                <td> @ue.Valor </td>
+                <td> @ue.TipoEvento </td>
+                <td> @ue.NomeConferente </td>
+                <td> @ue.Assunto </td>
+                <td> @ue.Conteudo </td>
+                <td> @ue.Descricao </td>
+                <td> @ue.Data </td>
+                <td> @ue.HoraInicio </td>
+                <td> @ue.HoraFinal </td>
+                <td> @ue.CargaHoraria </td>
+                <!-- </Campo - Atividade> -->
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+    <!-- </Tabela> -->
+</div>

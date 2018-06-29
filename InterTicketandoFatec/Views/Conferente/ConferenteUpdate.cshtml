@@ -1,0 +1,67 @@
+﻿@model InterTicketandoFatec.Models.Conferente
+
+@{
+    ViewBag.Title = "ConferenteUpdate";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Formulário> -->
+    <form action="/Conferente/Create" method="post">
+
+        <!-- <Titulo> -->
+        <font color="blue">
+            <h3 align="center"> Conferente </h3>
+        </font>
+        <!-- </Titulo> -->
+
+        <input type="hidden" name="ID" value="@Model.ID" /> <!-- <Campo escondido do ID> -->
+
+        <!-- <Campo - Nome> -->
+        <div class="form-group">
+            <label> Nome </label>
+            <input type="text" name="Nome" value="@Model.Nome" />
+        </div>
+        <!-- </Campo - Nome> -->
+
+        <br />
+
+        <!-- <Campo - Assunto> -->
+        <div class="form-group">
+            <label> Assunto </label>
+            <textarea class="form-control" rows="5" name="Assunto" value="@Model.Assunto"></textarea>
+        </div>
+        <!-- </Campo - Assunto> -->
+
+        <br />
+
+        <!-- <Campo - Conteudo> -->
+        <div class="form-group">
+            <label> Conteudo </label>
+            <textarea class="form-control" rows="5" name="Conteudo" value="@Model.Conteudo"></textarea>
+        </div>
+        <!-- </Campo - Conteudo> -->
+
+        <br />
+
+        <!-- <Botões> -->
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark-green" type="submit"> Salvar </button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-mdb-color" type="reset"> Limpar </button>
+            </div>
+
+            <div class="row col">
+                <a class="btn btn-elegant" href="/Atividade/AtividadeIndex"> Voltar </a>
+            </div>
+        </div>
+        <!-- </Botões> -->
+    </form>
+    <!-- </Formulário> -->
+</div>

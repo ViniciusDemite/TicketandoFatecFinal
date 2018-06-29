@@ -1,0 +1,57 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.Comissao>
+@using InterTicketandoFatec.Models
+
+@{
+    ViewBag.Title = "ComissaoIndex";
+    Layout = "~/Views/Layout/_LayoutOrganizacao.cshtml";
+}
+
+@{ Comissao comissoes = Session["comissao"] as Comissao;}
+
+
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+                                  <div class="container">
+                                      <!-- <Tabela> -->
+                                      <table class="table table-hover">
+                                          <!-- <Cabeçalho> -->
+                                          <thead class="thead-dark">
+                                              <tr>
+                                                  <th align="center"> <b> Login </b> </th>
+                                                  <th align="center"> <b> Descrição </b> </th>
+
+                                                  @if (comissoes.Perfil == "administrador")
+                                                  {
+                                                      <th colspan="2"></th> <!-- <Propósto: preencher o cabeçalho das duas colunas adicionais criadas pelos botões, Alterar e Apagar, presentes da tabela> -->
+                                                  }
+                                              </tr>
+                                          </thead>
+                                          <!-- </Cabeçalho> -->
+                                          <!-- <Corpo> -->
+                                          @foreach (var comissao in Model)
+                                          {
+                                              <tr>
+                                                  <td> @comissao.Login </td>
+                                                  <td> @comissao.Descricao </td>
+
+                                                      <td> <a class="btn btn-primary" href="/Comissao/ComissaoUpdate/@comissao.ID"> Atualizar </a> </td>
+
+                                                      <td> <a class="btn btn-danger" href="/Comissao/ComissaoDelete/@comissao.ID"> Apagar </a> </td>
+                                              </tr>
+                                          }
+                                          <!-- </Corpo> -->
+                                      </table>
+                                      <!-- </Tabela> -->
+                                      <br /><br /> <!-- <Espaçamento> -->
+                                      @if (comissoes.Perfil == "administrador")
+                                      {
+                                          <!-- <Botão - Acionar> -->
+                                          <a class="btn btn-primary" href="/Comissao/ComissaoCreate"> Adicionar </a>
+
+                                          <!-- <Botões - Links para as tabelas Join> -->
+                                          <a class="btn btn-secondary" href="/Comissao/ComissaoResponsavel"> Comissão Responsavel </a>
+
+                                          <a class="btn btn-secondary" href="/Comissao/PessoaComissao"> Pessa Comissão </a>
+                                      }
+                                      <!-- </Botões - Links para as tabelas Join> -->
+                                  </div>

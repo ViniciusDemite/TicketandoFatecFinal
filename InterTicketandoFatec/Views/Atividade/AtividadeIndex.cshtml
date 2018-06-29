@@ -1,0 +1,99 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.AtividadeView>
+
+@{
+    ViewBag.Title = "AtividadeIndex";
+    Layout = "~/Views/Layout/_LayoutOrganizacao.cshtml";
+}
+
+<div class="conteiner">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Tabela> -->
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+                <!-- <Dados - Evento> -->
+                <th align="center"> <b> Nome </b> </th>
+                <th align="center"> <b> Preço(R$) </b> </th>
+                <!-- </Dados - Evento> -->
+
+                <!-- <Dados - Tipo> -->
+                <th align="center"> <b> Tipo </b> </th>
+                <!-- </Dados - Tipo> -->
+
+                <!-- <Dados - Conferente> -->
+                <th align="center"> <b> Conferente </b> </th> <!-- <Lembrete: nome do conferente> -->
+                <th align="center"> <b> Assunto </b> </th>
+                <th align="center"> <b> Conteudo </b> </th>
+                <!-- </Dados - Conferente> -->
+
+                <!-- <Dados - Atividade> -->
+                <th align="center"> <b> Descrição </b> </th>
+                <th align="center"> <b> Data </b> </th>
+                <th align="center"> <b> Inicio </b> </th>
+                <th align="center"> <b> Terminio </b> </th>
+                <th align="center"> <b> Carga Horaria </b> </th>
+                <!-- </Dados - Atividade> -->
+
+                <th colspan="2"></th> <!-- <Propósto: preencher o cabeçalho das duas colunas adicionais criadas pelos botões, Alterar e Apagar, presentes da tabela> -->
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var atividade in Model)
+        {
+            <tr>
+                <!-- <Campo - Evento> -->
+                <td> @atividade.Nome_Evento </td>
+
+                <td> @atividade.Valor </td>
+                <!-- </Campo - Evento> -->
+
+                <!-- <Campo - Tipo> -->
+                <td> @atividade.TipoEvento </td>
+                <!-- </Campo - Tipo> -->
+
+                <!-- <Campo - Conferente> -->
+                <td> @atividade.NomeConferente </td>
+
+                <td> @atividade.Assunto </td>
+
+                <td> @atividade.Conteudo </td>
+                <!-- </Campo - Conferente> -->
+
+                <!-- <Campo - Atividade> -->
+                <td> @atividade.Descricao </td>
+
+                <td> @atividade.Data </td>
+
+                <td> @atividade.HoraInicio </td>
+
+                <td> @atividade.HoraFinal </td>
+
+                <td> @atividade.CargaHoraria </td>
+                <!-- </Campo - Atividade> -->
+
+                <td> <a class="btn btn-primary" href="/Atividade/AtividadeUpdate/@atividade.EventoId"> Atualizar </a> </td>
+
+                <td> <a class="btn btn-danger" href="/Atividade/AtividadeDelete/@atividade.EventoId"> Apagar </a> </td>
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+    <!-- </Tabela> -->
+
+    <br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Botão - Acionar> -->
+    <a class="btn btn-primary" href="/Evento/EventoCreate"> Adicionar </a>
+
+    <!-- <Botões - Links para outros indexes> -->
+    <a class="btn btn-secondary" href="/Evento/EventoIndex"> Eventos </a>
+
+    <a class="btn btn-secondary" href="/Conferente/ConferenteIndex"> Conferentes </a>
+    <!-- </Botões - Links para outros indexes> -->
+</div>

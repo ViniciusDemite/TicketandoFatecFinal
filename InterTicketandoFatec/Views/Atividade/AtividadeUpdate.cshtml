@@ -1,0 +1,117 @@
+﻿@model InterTicketandoFatec.Models.Atividade
+
+@{
+    ViewBag.Title = "AtividadeUpdate";
+    Layout = "~/Views/Layout/_LayoutOrganizacao.cshtml";
+}
+
+<div class="col-lg-6 col-sm-8 col-xs-12 offset-md-3">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Formulário> -->
+    <form action="/Atividade/AtividadeUpdate" method="post">
+
+        <!-- <Titulo> -->
+        <font color="blue">
+            <h3 align="center"> Atividade </h3>
+        </font>
+        <!-- </Titulo> -->
+
+        <input type="hidden" name="ID" value="@Model.ID" /> <!-- <Campo escondido do ID> -->
+
+        <!-- <Campo - Tipo> -->
+        <select name="Tipo_id" class="form-control">
+            @foreach (var tipo in ViewBag.Tipos)
+            {
+                <option value="@tipo.ID" @(tipo.ID == Model.Tipo_id ? "selected" : "")> @tipo.DescricaoTipo </option>
+            }
+        </select>
+        <!-- </Campo - Tipo> -->
+
+        <!-- <Campo - Descrição> -->
+        <div class="form-group">
+            <label> Descrição </label>
+            <textarea class="form-control" rows="5" name="Descricao" value="@Model.DescricaoAtividade"></textarea>
+        </div>
+        <!-- </Campo - Descrição> -->
+
+        <br />
+
+        <!-- <Campo - Data> -->
+        <div class="form-group">
+            <label> Data </label>
+            <input id="datepicker" width="276" class="form-group" />
+            <script>
+                    $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap4'
+                    });
+            </script>
+        </div>
+        <!-- </Campo - Data> -->
+
+        <br />
+
+        <!-- <Campo - Inicio> -->
+        <div class="form-group">
+            <label> Inicio </label>
+            <input type="text" name="HoraInicio" value="@Model.HoraInicio" />
+        </div>
+        <!-- </Campo- Inicio> -->
+
+        <br />
+
+        <!-- <Campo - Terminio> -->
+        <div class="form-group">
+            <label> Terminio </label>
+            <input type="text" name="HoraFinal" class="form-control" value="@Model.HoraFinal" />
+        </div>
+        <!-- </Campo - Termino> -->
+
+        <br />
+
+        <!-- <Campo - Carga Horaria> -->
+        <div class="form-group">
+            <label> Carga Horaria </label>
+            <input type="text" name="CargaHoraria" class="form-control" value="@Model.CargaHoraria" />
+        </div>
+        <!-- </Campo - Carga Horaria> -->
+
+        <!-- <Campo - Evento> -->
+        <select name="Evento_id" class="form-control">
+            @foreach (var evento in ViewBag.Eventos)
+            {
+                <option value="@evento.ID" @(evento.ID == Model.Evento_id ? "selected" : "")> @evento.NomeEvento </option>
+            }
+        </select>
+        <!-- </Campo - Evento> -->
+
+        <!-- <Campo - Conferente> -->
+        <select name="Conferente_id" class="form-control">
+            @foreach (var conferente in ViewBag.Conferentes)
+            {
+                <option value="@conferente.ID" @(conferente.ID == Model.Conferente_id ? "selected" : "")> @conferente.Nome </option>
+            }
+        </select>
+        <!-- </Campo - Conferente> -->
+
+        <br />
+
+        <!-- <Botões> -->
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark-green" type="submit"> Salvar </button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-mdb-color" type="reset"> Limpar </button>
+            </div>
+
+            <div class="row col">
+                <a class="btn btn-elegant" href="/Atividade/Index"> Voltar </a>
+            </div>
+        </div>
+        <!-- </Botões> -->
+    </form>
+    <!-- </Formulário> -->
+</div>

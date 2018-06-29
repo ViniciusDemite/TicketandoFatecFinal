@@ -1,0 +1,20 @@
+Duvidas
+
+1 - Como puxar um dropdow com os nomes os eventos já cadastrados na hora de cadastrar uma nova comissão, utilizando
+da propriedade <enveto_id>
+
+2 - É possivel fazer o mesmo para a criação de uma nova atividade utilizandos das propriedade: <evento_id> e <conferente_id>.
+
+3 - Como fazer um <if> para confirmar a sessão do usuário e habilitar novos botões/text.
+
+====================================================================================
+
+Para fazer a sessão dentro da view
+
+@using InterTicketandoFatec.Models
+
+@{Comissao/Usuario objeto = Sesseion["comissao/usuario"] as Comissao/Usuario}
+@c.propriedade
+
+@if (Session["comissao/usuario"] != null){}
+

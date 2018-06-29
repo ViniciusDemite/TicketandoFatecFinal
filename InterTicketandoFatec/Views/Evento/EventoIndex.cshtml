@@ -1,0 +1,41 @@
+﻿@model IEnumerable<InterTicketandoFatec.Models.Evento>
+
+@{
+    ViewBag.Title = "EventoIndex";
+    Layout = "~/Views/Layout/_LayoutPadrao.cshtml";
+}
+
+<div class="conteiner">
+
+    <br /><br /><br /><br /><br /><br /> <!-- <Espaçamento> -->
+
+    <!-- <Tabela> -->
+    <table class="table table-hover">
+
+        <!-- <Cabeçalho> -->
+        <thead class="thead-dark">
+            <tr>
+
+                <th align="center"> <b> Nome </b> </th>
+                <th align="center"> <b> Preço(R$) </b> </th>
+
+                <th colspan="1"></th> <!-- <Propósto: preencher o cabeçalho das duas colunas adicionais criadas pelos botões, Alterar e Apagar, presentes da tabela> -->
+            </tr>
+        </thead>
+        <!-- </Cabeçalho> -->
+
+        <!-- <Corpo> -->
+        @foreach (var evento in Model)
+        {
+            <tr>
+                <td> @evento.NomeEvento </td>
+
+                <td> @evento.Valor </td>
+
+                <td> <a href="/Evento/EventoUpdate/@evento.ID"> Atualizar </a> </td>
+            </tr>
+        }
+        <!-- </Corpo> -->
+    </table>
+    <!-- </Tabela> -->
+</div>

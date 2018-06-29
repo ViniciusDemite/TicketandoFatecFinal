@@ -1,0 +1,119 @@
+﻿@using InterTicketandoFatec.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <nav class="nav fixed-top  navbar-expand-lg stylish-color-dark scrolling-navbar">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="/PaginaInicial/PaginaInicial">
+                <font color="white" size="6"> TICKETANDO</font>
+                <font color="red"> FATEC RP</font>
+            </a>
+            <!-- /.Logo -->
+
+            <ul class="navbar-nav">
+
+                <!-- <Icone - Eventos> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Atividade/AtividadeIndex">
+                        <i class="fas fa-calendar-alt"></i>
+                        <font color="white"> Eventos </font>
+                    </a>
+                </li>
+                <!-- </Icone - Eventos> -->
+
+                <!-- <Icone - Comissao> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Comissao/ComissaoIndex">
+                        <i class="fas fa-users-cog"></i>
+                        <font color="white"> Comissão </font>
+                    </a>
+                </li>
+                <!-- </Icone - Comissao> -->
+
+                <!-- <Icone - Eventos usuarios> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Evento_Usuario/Evento_UsuarioIndex">
+                        <i class="fas fa-users-cog"></i>
+                        <font color="white"> Eventos Usuarios </font>
+                    </a>
+                </li>
+                <!-- </Icone - Eventos usuario> -->
+
+                <!-- <Icone - Log off> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/ComissaoLogin/ComissaoLogOff">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <font color="white"> Log Out </font>
+                    </a>
+                </li>
+                <!-- </Icone - Log off> -->
+            </ul>
+        </nav>
+
+        <!-- <Nome do usuario> -->
+        @if (Session["comissao"] != null)
+        {
+            Comissao c = Session["comissao"] as Comissao;
+
+            <span>
+                <font color="white"> <h4> Login: @c.Login </h4> </font>
+            </span>
+        }
+        <!-- </Nome do usuario> -->
+
+        <hr />
+
+        <!-- <Google> -->
+    <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        @RenderBody()
+
+        <!-- Rodapé -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron stylish-color-dark">
+                </div>
+            </div>
+        </div>
+        <!-- Rodapé -->
+    </div>
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Links do MDB Bootstrap -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    @* Link do Bootstrap para utilizar seus layouts *@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    @* Link para usar os icones do Font Awesome *@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- SCRIPTS-->
+    <!-- Scripts do MDB Bootstrap -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+</body>
+</html>

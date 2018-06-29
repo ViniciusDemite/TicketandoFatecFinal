@@ -1,0 +1,223 @@
+﻿@using InterTicketandoFatec.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <!-- Barra de navegação fixa -->
+    <nav class="navbar fixed-top navbar-expand-lg stylish-color-dark scrolling-navbar">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="/PaginaInicial/PaginaInicial">
+            <font color="white" size="6"> TICKETANDO</font>
+            <font color="red"> FATEC RP</font>
+        </a>
+        <!-- /.Logo -->
+
+        <!-- Icones -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <!-- Icone - Cadastrar -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Usuario/UsuarioCreate">
+                        <i class="fas fa-users"></i>
+                        <font color="white"> Cadastrar</font>
+                    </a>
+                </li>
+                <!-- /.Icone - Cadastrar -->
+
+                <!-- Icone - Como funciona -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/ComoFunciona/ComoFunciona">
+                        <i class="fas fa-info"></i>
+                        <font color="white"> Como funciona  </font>
+                    </a>
+                </li>
+                <!-- /.Icone - Como funciona -->
+
+                <!-- Icone - Organização -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/ComissaoLogin/ComissaoLogin">
+                        <i class="fas fa-lock"></i>
+                        <font color="white"> Organização  </font>
+                    </a>
+                </li>
+                <!-- /.Icone - Organização -->
+
+                <!-- <Icone - Log off> -->
+                @if (Session["usuario"] != null)
+                {
+                    <li class="nav-item">
+                    <a class="nav-link" href="/Usuario/UsarioIndex">
+                        <font color="white"> Perfil </font>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Usuario/UsuarioLogOff">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <font color="white"> Log Out </font>
+                    </a>
+                </li>
+                }
+                <!-- </Icone - Log off> -->
+            </ul>
+            <!-- / .Icones -->
+
+            <!-- Barra de pesquisa -->
+            @if (Session["usuario"] == null)
+            {
+            <form class="form-inline my-2 my-lg-0" action="/Usuario/UsuarioLogin" method="post">
+                <input class="form-control mr-sm-2" name="Login" type="text" placeholder="Usuario" aria-label="usuario">
+                <input class="form-control mr-sm-2" name="Senha" type="password" placeholder="Senha" aria-label="senha">
+                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit">Login</button>
+            </form>
+            }
+            else
+            {
+                Usuario u = Session["usuario"] as Usuario;
+
+                <span>
+                    <font color="white"> <h4> Nome: @u.Nome </h4> </font>
+                </span>
+            }
+        </div>
+    </nav>
+    <!-- /.Barra de navegação fixa -->
+
+    <hr />
+
+    Confira aqui os eventos
+
+    <hr />
+
+    <!-- <Google> -->
+    <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    @RenderBody()
+
+    <br />
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark darken-3 mt-4">
+
+        <!-- Footer Links -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-4 text-center">
+                    <br />
+                    <i class="fa fa-fw fa-map-marker"></i>
+                    <div>
+                        <strong class="display-block fz18 uppercase">ENDEREÇO</strong>
+                        <p>Rua Fernandópolis,2510, São José do Rio Preto, São Paulo, 15043-020</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <br />
+                    <i class="fa fa-fw fa-phone"></i>
+                    <div>
+                        <strong class="display-block fz18 uppercase">TELEFONE:</strong>
+                        <br />
+                        <p>Telefone: (17) 3219-1433 <br></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <br />
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <div>
+                        <strong class="display-block fz18 uppercase">E-MAIL</strong>
+                        <br />
+                        <a href="mailto:faleconosco@fatecriopreto.edu.br">faleconosco@fatecriopreto.edu.br</a><br>
+                        <a href="www.fatecriopreto.edu.br" target="_blank">www.fatecriopreto.edu.br</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        </div>
+        <!-- Footer Links -->
+
+
+    </footer>
+    <!-- Footer -->
+    <!-- Links do MDB Bootstrap -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- DATA PICKER FUNCIONAR-->
+    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>
+        .bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black
+        }
+
+            .bootstrap-iso form button, .bootstrap-iso form button:hover {
+                color: white !important;
+            }
+
+        .asteriskField {
+            color: red;
+        }
+    </style>
+
+
+    <!-- Scripts do MDB Bootstrap -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+
+
+    @* Link do Bootstrap para utilizar seus layouts *@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    @* Código para utilizar o Javascript do Bootstrap
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> *@
+    <!-- Imports REQUERIDOS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    @* Link para usar os icones do Font Awesome *@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous" />
+
+</body>
+</html>

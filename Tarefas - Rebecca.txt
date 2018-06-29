@@ -1,0 +1,6 @@
+1 - Colocar o <conteiner> nas páginas que não tiverem.
+
+2 - Colocar avisos nas telas de create sobre o que for necessário. Ex.: avisar que os campos RA e Curso são somente para
+quem for aluno da Fatec Rio Preto.
+
+3 - Colocar <from-control> se tiver algum faltando nos layouts, inclusive os dropdows
